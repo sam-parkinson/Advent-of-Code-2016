@@ -75,18 +75,11 @@ public class GridTracker {
             } else {
                 moveQuickly(dist);
             }
-
-            
-            
-            // add new location to hashmap of previously visited locations
-            // as long as boolean is false
-            // if we see previously visited location
-            // set boolean to true
-            // update twoX, twoY
         }
     }
 
     private boolean moveDeliberately(int dist) {
+        // i.e., did we succeed in adding to the set
         boolean success = true;
 
         for (int i = 0; i < dist; i++) {
@@ -107,6 +100,7 @@ public class GridTracker {
                     break;
             }
             
+            // see if we have found true location, update if so
             if (success)
             {
                 success = visited.add(x + ", " + y);
