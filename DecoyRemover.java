@@ -11,15 +11,35 @@ public class DecoyRemover {
 
         private HashMap<Character, Integer> charCount;
 
-        private Room (String code) {
+        private Room (String input) {
+            this.code = 0;
             // split code
-            // assign parts of code to room
 
-            // make hash map
+            // get regex working properly
+            String[] split0 = input.split("");
+
+            // code in format letters-dashes-dashes-number[checksum]
+
+            // 1. break out checksum into separate value
+            // 2. go thru remainder of array
+            // 3. while value non-numeric, append to name, then hash
+            // 4. when value numeric, parse int to code
+
         }
-        // room constructor
 
         // is room valid? returns int, 0 if false, code if true
+        private int isValidRoom() {
+            /*
+                sort keys of hash map by value then by alphabetical order
+
+                go thru checksum and make sure char at each index matches at corresponding index
+
+                if we make it through, return true, otherwise return false
+            */            
+
+            // return 0 if false
+            return this.code;
+        }
     }
 
     private int idSum;
@@ -29,6 +49,11 @@ public class DecoyRemover {
         this.idSum = 0;
 
         parseInput(address);
+        sumValidRooms();
+    }
+
+    public int getIDSum() {
+        return this.idSum;
     }
 
     private void parseInput(String address) {
@@ -47,6 +72,16 @@ public class DecoyRemover {
             System.out.println(e);
         }
 
-        // make room list
+        roomList = new Room[rawRooms.size()];
+
+        for (int i = 0; i < roomList.length; i++) {
+            roomList[i] = new Room(rawRooms.get(i));
+        }
+    }
+
+    private void sumValidRooms() {
+        for (int i = 0; i < roomList.length; i++) {
+            idSum += roomList[i].isValidRoom();
+        }
     }
 }

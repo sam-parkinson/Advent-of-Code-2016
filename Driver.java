@@ -3,6 +3,7 @@ public class Driver {
         GridTracker gridTracker = new GridTracker("inputs/day1.txt");
         BathroomCode bathroomCode = new BathroomCode("inputs/day2.txt");
         ShapeAnalyzer shapeAnalyzer = new ShapeAnalyzer("inputs/day3.txt");
+        DecoyRemover decoyRemover = new DecoyRemover("inputs/day4.txt");
 
         System.out.println("Problem 1.1: " + gridTracker.getEndDistance());
         System.out.println("Problem 1.2: " + gridTracker.getTrueDistance());
@@ -14,5 +15,8 @@ public class Driver {
 
         System.out.println("Problem 3.1: " + shapeAnalyzer.getHorizTriangle());
         System.out.println("Problem 3.2: " + shapeAnalyzer.getVertTriangle());
+        System.out.println();
+
+        System.out.println("Problem 4.1: " + decoyRemover.getIDSum());
     }
 }
