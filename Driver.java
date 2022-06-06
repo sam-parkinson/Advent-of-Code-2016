@@ -18,5 +18,6 @@ public class Driver {
         System.out.println();
 
         System.out.println("Problem 4.1: " + decoyRemover.getIDSum());
+        System.out.println("Problem 4.2: " + decoyRemover.getCorrectRoomCode());
     }
 }
