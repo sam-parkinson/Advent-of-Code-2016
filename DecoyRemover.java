@@ -155,5 +155,3 @@ public class DecoyRemover {
         }
     }
 }
-
-// && nameArr[j + 1].equals("pole")

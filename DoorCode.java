@@ -65,6 +65,8 @@ public class DoorCode {
         }
     }
 
+    // https://www.geeksforgeeks.org/md5-hash-in-java/
+
     private String findFirst7MD5(String input) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
@@ -85,6 +87,3 @@ public class DoorCode {
         return "";
     }
 }
-
-
-// https://www.geeksforgeeks.org/md5-hash-in-java/
